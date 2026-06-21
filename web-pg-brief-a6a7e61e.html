@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赏金女王 · 宁静入口 | 一位内容指引者的笔记</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', '宋体', 'Times New Roman', serif;
+      background-color: #f9f7f4;
+      color: #2d2a26;
+      line-height: 1.8;
+      padding: 0 1.25rem;
+    }
+
+    /* 深色头图 ———— 干净、收敛 */
+    .hero {
+      background: linear-gradient(145deg, #1f1b18 0%, #2d2824 100%);
+      margin: 2.5rem auto 2rem auto;
+      max-width: 900px;
+      padding: 4rem 3rem 3.2rem 3rem;
+      border-radius: 28px 28px 12px 12px;
+      color: #ebe7df;
+      box-shadow: 0 12px 28px -8px rgba(30, 20, 15, 0.25);
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin-bottom: 0.4rem;
+      color: #f2ede5;
+      line-height: 1.2;
+      word-break: break-word;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      color: #c6bab0;
+      border-left: 3px solid #b89b84;
+      padding-left: 1rem;
+      margin: 0.6rem 0 0 0.2rem;
+      font-style: italic;
+    }
+
+    /* 正文容器 ———— 浅色、舒适留白 */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #fefcf9;
+      padding: 2.8rem 2.8rem 3.5rem 2.8rem;
+      border-radius: 24px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02), 0 0 0 1px #ece6df inset;
+      margin-bottom: 4rem;
+    }
+
+    .content h2 {
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: #3e3732;
+      margin: 2.2rem 0 0.8rem 0;
+      border-bottom: 2px dotted #d6cdc2;
+      padding-bottom: 0.25rem;
+    }
+
+    .content h2:first-of-type {
+      margin-top: 0.2rem;
+    }
+
+    .content p {
+      margin: 1.1rem 0;
+      text-align: justify;
+      font-size: 1.05rem;
+    }
+
+    /* 引用提示块 ———— 柔和底色，不刺眼 */
+    .pull-quote {
+      background: #f1ebe3;
+      border-left: 6px solid #b89b84;
+      padding: 1.4rem 2rem;
+      margin: 2rem 0;
+      border-radius: 0 20px 20px 0;
+      font-size: 1rem;
+      color: #3f3630;
+    }
+
+    .pull-quote::before {
+      content: "📬 提示 · ";
+      font-weight: 400;
+      color: #7e6c5c;
+      letter-spacing: 1px;
+    }
+
+    /* 强调色链接 ———— 温和融入 */
+    a {
+      color: #9f7c62;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+      font-weight: 400;
+    }
+
+    a:hover {
+      color: #735a45;
+      border-bottom: 1px solid #735a45;
+    }
+
+    /* 场景卡片（简洁轻卡） */
+    .scene-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .scene-item {
+      flex: 1 1 170px;
+      background: #f7f3ed;
+      border-radius: 16px;
+      padding: 1.2rem 1.2rem 1rem 1.2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      border: 1px solid #e5ddd3;
+    }
+
+    .scene-item strong {
+      display: block;
+      font-weight: 500;
+      color: #4d423b;
+      margin-bottom: 0.35rem;
+      font-size: 1.1rem;
+    }
+
+    .scene-item span {
+      font-size: 0.95rem;
+      color: #5c5249;
+    }
+
+    /* FAQ 摘要小段 ———— 不展开，只提示 */
+    .faq-snip {
+      background: #f4efe9;
+      padding: 1.2rem 1.6rem;
+      border-radius: 30px 12px 30px 12px;
+      margin: 2rem 0 1.5rem 0;
+    }
+
+    .faq-snip p {
+      margin: 0.4rem 0;
+    }
+
+    .faq-snip summary {
+      font-weight: 500;
+      color: #4d3f34;
+      cursor: default;
+      margin-bottom: 0.25rem;
+    }
+
+    /* 访问句 ———— 放在结尾 */
+    .visit-note {
+      text-align: right;
+      font-size: 1rem;
+      margin-top: 2.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e3dad0;
+      color: #4e443b;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 620px) {
+      .hero {
+        padding: 2.8rem 1.8rem 2.4rem 1.8rem;
+        margin: 1.8rem 0 1.2rem 0;
+        border-radius: 20px;
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .content {
+        padding: 2rem 1.4rem 2.6rem 1.4rem;
+      }
+      .content h2 {
+        font-size: 1.4rem;
+      }
+      .scene-grid {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 420px) {
+      body {
+        padding: 0 0.8rem;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .pull-quote {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>赏金女王 · 安静的角落</h1>
+    <div class="sub">一篇笔记 · 一个稳定的入口</div>
+  </div>
+
+  <div class="content">
+
+    <h2>从一篇笔记开始</h2>
+    <p>
+      很多朋友第一次听说「赏金女王」这个名字，都觉得有一种故事感。它既像西部电影里的角色，又带着一点游戏世界里的冒险气息。这个网站本身并没有夸张的承诺或喧嚣的推广，而是一个低调、稳定、持续存在的页面——你随时可以回来，它就在那里。
+    </p>
+    <p>
+      我写下这篇介绍，不是为了推销什么，而是想清晰地告诉你：如果你曾在别处听到过这个名字，或者偶然在书签里看到它，那么这里就是一个可靠的落脚点。网站的结构很轻，运转平顺，不需要你记住复杂的地址。
+    </p>
+
+    <h2>关于稳定入口的一点说明</h2>
+    <p>
+      网络上很多页面像潮水一样来了又退，但有些地方值得被记住。<a href="https://web-pg-queenofbounty.com">赏金女王</a>就属于那种不张扬但始终在线的小站。无论是深夜查资料，还是白天随手打开，它的响应速度与界面风格都保持一致。没有突然的跳转，没有恼人的弹窗，体验接近一本安静的纸质手册。
+    </p>
+    <p>
+      从内容角度看，它更像一个资料集合与索引，围绕特定主题提供了清晰的导航。你不需要费力寻找某个功能，因为所有东西都摆在恰当的位置。这也是我把它推荐给朋友的原因——干净、直接、不绕路。
+    </p>
+
+    <div class="pull-quote">
+      如果你只是想看一眼，或者把它当作一个熟悉的目的地，那么直接记住这个名字就好。不需要额外操作。
+    </div>
+
+    <h2>适合哪些场景</h2>
+    <div class="scene-grid">
+      <div class="scene-item">
+        <strong>日常浏览</strong>
+        <span>随手打开，没有压力，信息呈现从容。</span>
+      </div>
+      <div class="scene-item">
+        <strong>主题查询</strong>
+        <span>围绕核心内容做了归类，查找起来很顺手。</span>
+      </div>
+      <div class="scene-item">
+        <strong>收藏备用</strong>
+        <span>长期维护，你不会某天发现它消失。</span>
+      </div>
+    </div>
+
+    <h2>FAQ 小记 · 常见想法</h2>
+    <div class="faq-snip">
+      <summary>❓ 需要注册或登录吗？</summary>
+      <p>不需要。整个页面对所有访客开放，没有门槛。</p>
+      <summary>❓ 内容会频繁变动吗？</summary>
+      <p>结构长期稳定，偶尔会补充细节，但不会突然改得面目全非。</p>
+      <summary>❓ 手机上看体验如何？</summary>
+      <p>布局做了自适应，小屏幕下文字清晰，按钮和链接也容易点按。</p>
+    </div>
+
+    <p style="margin-top: 1.6rem;">
+      网站没有多余的装饰，也不靠噱头吸引人。它更像一个熟悉的老朋友——安静地等你来，然后给你想看的东西。如果你觉得这个风格合你的胃口，不妨把它放在书签栏里。
+    </p>
+
+    <div class="visit-note">
+      希望这篇介绍能让你对「赏金女王」有一个真实的印象。下次想找一个不慌不忙的地方，不妨直接过来。
+    </div>
+
+  </div>
+
+</body>
+</html>
